@@ -9,9 +9,8 @@ const refs = {
 
 refs.start.addEventListener('click', colorChange);
 refs.stop.addEventListener('click', ClearColorChange);
-
 let nIntervId;
-
+refs.stop.disabled = true;
 function colorChange() {
   document.body.style.background = getRandomHexColor();
   refs.start.disabled = true;
