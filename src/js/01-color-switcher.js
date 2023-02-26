@@ -11,17 +11,28 @@ refs.start.addEventListener('click', colorChange);
 refs.stop.addEventListener('click', ClearColorChange);
 refs.start.disabled = false;
 
+let nIntervId;
+
 function colorChange() {
   document.body.style.background = getRandomHexColor();
   refs.start.disabled = true;
   refs.stop.disabled = false;
-  intervalColor = setInterval(() => {
+
+   if (!nIntervId) {
+    nIntervId =  setInterval(() => {
     document.body.style.background = getRandomHexColor();
   }, 1000);
+  }
+  // intervalColor = setInterval(() => {
+  //   document.body.style.background = getRandomHexColor();
+  // }, 1000);
 }
 
 function ClearColorChange() {
   refs.stop.disabled = true;
   refs.start.disabled = false;
-  clearInterval(intervalColor);
+
+    clearInterval(nIntervId);
+  nIntervId = null;
+  // clearInterval(intervalColor);
 }
