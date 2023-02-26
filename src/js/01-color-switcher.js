@@ -1,8 +1,5 @@
 function getRandomHexColor() {
   return `#${Math.floor(Math.random() * 16777215).toString(16)}`;
-  setTimeout(() => {
-    console.log('change color');
-  }, delay);
 }
 
 const refs = {
@@ -12,7 +9,6 @@ const refs = {
 
 refs.start.addEventListener('click', colorChange);
 refs.stop.addEventListener('click', ClearColorChange);
-const delay = 1000;
 refs.start.disabled = false;
 
 function colorChange() {
