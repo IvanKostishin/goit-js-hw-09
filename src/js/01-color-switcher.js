@@ -23,9 +23,6 @@ function colorChange() {
     document.body.style.background = getRandomHexColor();
   }, 1000);
   }
-  // intervalColor = setInterval(() => {
-  //   document.body.style.background = getRandomHexColor();
-  // }, 1000);
 }
 
 function ClearColorChange() {
@@ -34,5 +31,4 @@ function ClearColorChange() {
 
     clearInterval(nIntervId);
   nIntervId = null;
-  // clearInterval(intervalColor);
 }
