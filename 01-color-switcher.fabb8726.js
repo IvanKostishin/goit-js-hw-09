@@ -1,2 +1,0 @@
-function t(){return`#${Math.floor(16777215*Math.random()).toString(16)}`}const e={start:document.querySelector("button[data-start]"),stop:document.querySelector("button[data-stop]")};e.start.addEventListener("click",(function(){document.body.style.background=t(),e.start.disabled=!0,e.stop.disabled=!1,intervalColor=setInterval((()=>{document.body.style.background=t()}),1e3)})),e.stop.addEventListener("click",(function(){e.stop.disabled=!0,e.start.disabled=!1,clearInterval(intervalColor)})),e.start.disabled=!1;
-//# sourceMappingURL=01-color-switcher.fabb8726.js.map
