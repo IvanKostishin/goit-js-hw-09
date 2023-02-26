@@ -33,8 +33,9 @@ function countdown() {
   const dateNow = new Date();
   if (dateNow.getTime() >= selectedDates[0].getTime()) {
     Notiflix.Notify.failure('Please choose a date in the future');
-  } else {
     startButton.disabled = true;
+  } else {
+    startButton.disabled = false;
     const timer = setInterval(() => {
       const ms = selectedDates[0].getTime() - new Date().getTime();
       const msRound = Math.floor(ms / 1000);
