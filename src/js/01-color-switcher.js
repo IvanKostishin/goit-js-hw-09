@@ -9,7 +9,6 @@ const refs = {
 
 refs.start.addEventListener('click', colorChange);
 refs.stop.addEventListener('click', ClearColorChange);
-refs.start.disabled = false;
 
 let nIntervId;
 
