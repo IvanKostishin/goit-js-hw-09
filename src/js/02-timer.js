@@ -8,11 +8,8 @@ const daysValue = document.querySelector('span[data-days]');
 const hoursValue = document.querySelector('span[data-hours]');
 const minutesValue = document.querySelector('span[data-minutes]');
 const secondsValue = document.querySelector('span[data-seconds]');
-
 startButton.disabled = true;
-startButton.addEventListener('click', countdown);
 let selectedDates = null;
-
 const options = {
   enableTime: true,
   time_24hr: true,
@@ -24,7 +21,13 @@ const options = {
   },
 };
 
+startButton.addEventListener('click', countdown);
+
 flatpickr(dataTime, options);
+
+function addLeadingZero(value) {
+  return String(value).padStart(2, '0');
+}
 
 function countdown() {
   const dateNow = new Date();
@@ -38,7 +41,6 @@ function countdown() {
       if (msRound === 0) {
         clearInterval(timer);
       }
-
       convertMs(ms);
     }, 1000);
   }
@@ -49,7 +51,6 @@ function convertMs(ms) {
   const minute = second * 60;
   const hour = minute * 60;
   const day = hour * 24;
-
   daysValue.textContent = addLeadingZero(Math.floor(ms / day));
   hoursValue.textContent = addLeadingZero(Math.floor((ms % day) / hour));
   minutesValue.textContent = addLeadingZero(
@@ -60,6 +61,4 @@ function convertMs(ms) {
   );
 }
 
-function addLeadingZero(value) {
-  return String(value).padStart(2, '0');
-}
+
