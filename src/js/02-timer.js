@@ -32,6 +32,7 @@ const options = {
       function countdownTime() {
         timer = setInterval(() => {
           startBtn.disabled = true;
+          dateChosen.disabled = true;
 
           const dateChoosenMs = new Date(dateChosen.value.replace(/-/g, '/')).getTime();
           const now = new Date().getTime();
